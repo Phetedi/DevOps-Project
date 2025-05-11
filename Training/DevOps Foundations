@@ -1,0 +1,3330 @@
+https://docs.google.com/document/d/1Hi7snCE6Xm-GcIaIsfYdog_3F8p2LX0hglUaj8EQjfA/edit?tab=t.0
+
+Trainer: Sonal Mittal
+
+Agenda: Day 1- 18 Jan 2025
+t
+Overview on SDLC lifecycle.
+Discuss on traditional Models and Agile methodologies.
+Discuss on DevOps process and principles.
+DevOps CICD pipeline and tools.
+DevOps and DevSecOps.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Reference for more notes:
+https://github.com/Sonal0409/PGP-DevOps-Cohot1-August/tree/main/DevOpsFundamentals
+
+======================================================
+Day 2: 19-Jan-2025
+=================================================
+
+DevSecOps pipeline and its tools
+Connect to Simplilearn lab
+Linux fundamentals
+Create a Linux based VM on AWS Simplilearn lab
+
+
+
+
+
+
+
+
+
+Dev + Sec+OPS
+
+
+
+
+
+=================================================
+
+Linux Fundamentals and Commands
+=================================================
+
+
+Connect to SL Lab on LMS
+
+
+
+
+
+
+
+
+
+
+LINUX Commands
+
+> Click on the Terminal button [ it will be a square black button].
+> Terminal application will open.
+
+> Linux commands are case sensitive.
+
+To check the OS
+
+           # uname
+
+Check the OS distribution and its version
+
+# cat /etc/os-release
+
+
+
+Clean up the screen
+      
+             # clear
+
+Check all the commands executed
+# history
+
+Become the root user:
+# sudo su -
+
+Create an empty directory:
+
+#  mkdir myfiles
+
+ List the directories
+
+# ls
+
+8. Go inside the directory
+
+# cd myfiles 
+
+9. Create a new empty file
+
+# touch file1
+
+# touch file2
+
+List the files in the directory
+# ls
+
+10. Add content to the file
+
+# echo "Hello All" > file1
+
+Insert one more line
+
+# echo "Hello All - line 2" >> file1
+
+See contents of the file
+
+# cat file1
+
+11. Create a file using vim editor:
+
+# vim file2
+
+Press i
+
+Enter required data/lines
+
+To save the data and come out of the file
+
+Press ESC key on your keyboard
+
+Then enter 
+:wq
+
+Press enter key
+
+Assignment:
+====================
+Create a file using nano editor
+
+ # nano file4
+
+     Inside the file, you can directly write into the file
+
+       Then to save the modifications,
+         Press ctl x
+       Press y
+        Enter key
+Comout of the file and save the file
+
+List more details about file and directory
+
+# ls -al
+
+
+
+
+List the files with complete date and time
+
+# ls -al --full-time
+
+Modify Permission of a file:
+==============================
+
+
+
+On a file you will see 3 types of permissions:
+
+r : read
+w: write
+x: execute
+- : no permission 
+
+There are 3 types of users on the file and permissions are given to them
+
+u: User who created the file
+g: the group members of the user that created the file
+
+O: All the other users in the linux system
+
+ a : for all users+ group + other user
+
+
+# chmod g+w file1
+
+# ls -al
+
+Remove permission:
+
+# chmod g-w file1
+
+Add write permission to user and group user for file1
+
+# chmod ug+w file1
+
+
+
+
+2nd method : octal format
+==================================
+
+Permission are represented as a number
+
+Read : r -> 4 
+Write: w -> 2
+Execute : x -> 1
+No permission : 0
+
+Suppose we want to give 
+
+Read and write to user => 4+2 = 6
+Read to group -> 4
+No permission to others -> 0
+
+# chmod 640 file1
+
+# chmodmd 777 file1  -> all permissions to all
+
+# chmod 400 file1  -> only read permission to the user
+
+
+Remove a file from a directory
+
+# rm -f file2
+
+Rename the file : 
+
+# mv file1 newfilename
+
+
+Install packages on Linux machine
+
+# apt-get update 
+
+# apt-get install tree -y
+
+
+
+LINUX Practice Exercises
+
+https://github.com/Sonal0409/Linux-Fundamentals.git
+
+
+
+Commands used commonly while learning DevOps tool
+=================================
+
+1. "ls": List files and directories in the current directory.
+ - Example: "ls -l" (long listing format with detailed information)
+2. "cd": Change directory.
+ - Example: "cd /path/to/directory"
+3. "pwd": Print working directory, displays the current directory path.
+4. "mkdir": Make directory, creates a new directory.
+ - Example: "mkdir new_directory"
+5. "rm": Remove files or directories.
+ - Example: "rm file.txt" (remove a file)
+6. "cp": Copy files or directories.
+ - Example: "cp file.txt /path/to/destination" (copy file to another location)
+7. "mv": Move or rename files or directories.
+ - Example: "mv file.txt /path/to/destination" (move file to another location)
+8. "touch": Create an empty file or update file timestamps.
+ - Example: "touch file.txt" (create a new file)
+9. "cat": Concatenate and display file content.
+ - Example: "cat file.txt"
+10. "grep": Search for a pattern in a file or output.
+ - Example: "grep "pattern" file.txt"
+11. "find": Search for files and directories within a specified path.
+ - Example: "find /path/to/search -name "file.txt""
+12. "chmod": Change file permissions.
+ - Example: "chmod 755 file.txt" (gives read, write, execute permissions to the owner, and read/execute to others)
+13. "chown": Change file owner and group.
+ - Example: "chown user:group file.txt"
+14. "ps": Display information about running processes.
+ - Example: "ps aux"
+15. "top": Monitor system processes in real-time.
+16. "kill": Terminate processes by their PID (Process ID).
+ - Example: "kill PID" (replace PID with the actual process ID)
+17. "tar": Archive files together.
+ - Example: "tar -czvf archive.tar.gz /path/to/directory" (create a gzip-compressed tar archive)
+18. "wget": Download files from the web via command line.
+ - Example: "wget https://example.com/file.txt"
+19. "curl": Transfer data to or from a server using various protocols.
+ - Example: "curl -O https://example.com/file.txt"
+20. "df": Display disk space usage.
+ - Example: "df -h" (show usage in human-readable format)
+21. "du": Estimate file and directory space usage.
+ - Example: "du -h file.txt" (show usage in human-readable format)
+22. "free": Display memory usage.
+ - Example: "free -h" (show memory in human-readable format)
+23. "ifconfig": Configure network interfaces (Note: Replaced by "ip" command in some distributions).
+ - Example: "ifconfig -a" (show all network interfaces)
+24. "ping": Send ICMP Echo Request packets to a host.
+ - Example: "ping google.com"
+25. "ssh": Secure Shell, provides a secure remote connection to a server.
+ - Example: "ssh user@hostname" (replace "user" and "hostname" with appropriate values)
+26. "scp": Securely copy files between hosts using SSH.
+ - Example: "scp file.txt user@hostname:/path/to/destination"
+27. "rsync": Efficiently synchronize files and directories between locations.
+ - Example: "rsync -av /path/source/ /path/destination"
+28. "netstat": Network statistics and connections.
+ - Example: "netstat -tulnp" (show all listening ports and associated PIDs)
+29. "nc": Netcat, a versatile networking utility for reading/writing data across TCP/UDP connections.
+ - Example: "nc -vz example.com 80" (check if port 80 is reachable)
+30. "systemctl": Control system services (systemd-based systems).
+ - Example: "systemctl start service_name" (start a service)
+31. "journalctl": Query and view logs from the systemd journal.
+ - Example: "journalctl -u service_name" (view logs for a specific service)
+32. "cron": Schedule periodic tasks using cron jobs.
+ - Example: "crontab -e" (edit the user's cron jobs)
+33. "at": Schedule a one-time task to be executed later.
+ - Example: "at now + 1 hour" (execute a command one hour from now)
+34. "sed": Stream editor for filtering and transforming text.
+ - Example: "sed 's/pattern/replacement/g' file.txt" (replace all occurrences of "pattern" with "replacement")
+35. "awk": Text processing tool for extracting and manipulating data in files.
+ - Example: "awk '{print $1}' file.txt" (print the first column of a file)
+36. "sort": Sort lines of text files.
+ - Example: "sort file.txt"
+37. "uniq": Report or omit repeated lines in a file.
+ - Example: "uniq file.txt"
+38. "tar": Archive files together.
+ - Example: "tar -czvf archive.tar.gz /path/to/directory" (create a gzip-compressed tar archive)
+39. "wget": Download files from the web via the command line.
+ - Example: "wget https://example.com/file.txt"
+40. "curl": Transfer data to or from a server using various protocols.
+ - Example: "curl -O https://example.com/file.txt"
+41. "df": Display disk space usage.
+ - Example: "df -h" (show usage in human-readable format)
+
+
+
+Practice exercises on Linux:
+
+https://github.com/Sonal0409/Linux-Fundamentals.git
+
+========================================
+
+Agenda: Day 3: 25 Jan
+===========================
+Continuous Version Control
+Benefits of Version Control 
+Types of Version Control System
+Explain about Git and its workflow
+git config commands
+Git local repository and its various workflows
+================================================
+
+Version Control
+================
+Verison is tracking of changes that has been done to a document or set of files
+Tracking can be done manually or using a tool
+
+- Version control is a tool or a system that will document/track the chnages that has been done to a file or set of files
+- Version allows multiple people to work on the same set of information 
+- Allows us to have a snapshot of entire project
+
+Why version Control tool is important??
+
+1. Allows to keep history or backup the data of our files
+2. Multiple team members can collaborate at common location(repository)
+3. Track who did the change, when the change, where the change was done.
+
+
+Benefits of Version Control System:
+==================================
+- Restore to previous versions
+- Understand what happened
+- Backup of the files
+- collaborate
+- Store version of files
+- If we have a bug we can find out what and when the code screwed up.
+
+
+Version control System:
+==================================
+1. Local version control System - 
+
+RCS (Revision control system)
+
+- a practice of having VC tool in the local machine of the developer/user
+- local VC tool will keep record of the changes made by the developer to the files.
+
+Issuse: 
+- Multiple people cannot access those files and cannot collaborate
+- if the machine is not available, the actual file and VC files will be deleted.
+
+2. Centralized version Control system - 
+Example: SVN, perforce, drive, TFS
+
+- In CVS a cebtral repository is maintained where all the versioned files are kept
+- users can checkin and checkout files from different machines
+
+Issues:
+- Dependent on internet
+- In case the central server fails, whole system goes down.
+
+3. Distributed Version control System 
+========================================
+Local Repository: 
+====================
+It is a location/folder within the local machine of the user/developer 
+where he will maintain versions of code files.
+
+===================================
+Role of VCS in DevOps lifecycle
+==================================
+- Planning stage - requirement documents can be version controlled
+- Design phase - Design documents, blueprints, solution documents can be version controlled
+- development phase - source code, data, properties files, DB files, unit test cases can be version controlled
+- Testing phase - test data documents, reports, Automation scripts can be version controlled
+- Deployment phase - scripts, deployment commands, docker, Kubernetes manifest files can be version controlled
+- Operations - Infrastructure scripts, playbooks(Ansible code is written in playbooks) can be version controlled
+
+======================================
+Best practices for version control 
+======================================
+- Commit the code granularly
+- commit with a clear message
+- provide git configurations
+- Utilize the concept of branching 
+- Always have the latest copy of the project code in your local 
+- set up roles, teams and give proper access to the repositories with team members
+- Approval process has to be set 
+- Backup your repositories to data loss.
+- git squashing, to combine the commits
+
+
+
+
+
+Git 
+===
+- is a version control engine used for local version control
+- it is an open source tool,, available for free
+- available for all the OS
+- GIT is used as a command line interface tool 
+- git comes with a GUI on windows OS
+- Development IDEs come integrated with git and github
+- Revert, branching, merging, stashing, rebase, tagging, commits etc.
+
+How git works- how can we version control files using git :
+
+
+
+
+
+
+
+
+
+Demo 1: 
+Creating working directory and local repository
+======================================
+
+# sudo su -
+
+ Check the git version on the lab
+
+# git --version
+
+=========================
+Extra commands if required to install git:
+
+On Amazon Linux:
+# yum install git -y
+
+On ubuntu : 
+
+# apt install git -y
+
+On windows:
+
+Use the below link to download git
+
+https://git-scm.com/downloads
+
+================================
+Create a working directory and 2 files in it
+# mkdir myproject
+
+# cd myproject
+
+# touch index1.html index2.html
+
+# ls
+
+Initiate the git local repository
+
+# git init
+
+# ls -al
+
+GIT configurations:
+==========================
+
+# git config --global user.name sonal0409
+
+# git config --global user.email admin@gmail.com
+
+
+To check the config set : 
+
+# git config --list
+These configuration also get saved in a directory and file with path as - check it
+
+# cat ~/.gitconfig
+
+If we have to remove the configurations use below commands
+
+# git config --global --unset user.name
+
+# git config --global --unset user.email
+
+
+Check the status of working directory if files are tracked or not
+
+# git status
+
+Add the file to the staging area
+
+# git add index1.html
+
+Check status of the file
+
+# git status
+
+Files that are staged(green color) will only be committed to local repo
+
+# git commit -m "adding file index1.html"
+
+Here m = user provided message
+
+
+# git status
+
+Check the log and configurations details
+
+# git log
+
+Check files that are in local repo
+
+# git ls-files
+
+=====================================
+Extra Information on git config:
+
+You can practice these commands latter
+
+System:
+*****************
+
+If you want to set same user.name and same email on every repository created by any OS user that your are logged in:
+
+$ git config --system user.name sonal0409
+
+$ git config --system user.email admin@gmail.com
+
+
+Where is git going to check the system level configuration:
+
+$ cat /etc/gitconfig
+
+> In this file the system level variable and values will be set
+
+
+Where is git going to check the global level configuration:
+
+You the find the global configuration set in the file:
+
+$ cat ~/.gitconfig
+
+If config are in file cat .git/config  → then the config are local
+
+
+Where is git going to check the local level configuration:
+
+$ cat .git/config
+
+
+Command to edit set global configuration:
+
+git config --global --edit
+
+git config --global --edit
+
+>  unsetting our configuration file using flag --unset in git config --global
+command.
+Command used: git config --global --unset user.email
+
+ git config --global --unset user.name
+
+==============================================
+
+Day 4: 26 Jan
+
+the lab is reset, pls execute below steps:
+
+# sudo su -
+
+# mkdir myproject && cd myproject
+
+# git init
+
+# git config --global user.name admin
+
+#  git config --global user.email admin@gmail.com
+
+# touch index1.html index2.html
+
+# git add .
+
+# git commit -m "add files"
+
+# git log
+
+
+Check the files in the local repo
+
+# git ls-files
+
+Demo 1: 
+======================================
+Make changes to an existing file that is tracked by git 
+
+Add the modifications to the local repo
+
+# echo "Added content in the file" > index1.html
+
+# git status
+
+# git commit -a -m "modified file"
+
+# git log
+
+
+Demo 2: See the difference between the tracked version and the modified version
+===========================================
+Make changes to an existing file that is tracked by git 
+
+Add the modifications to the local repo
+
+# echo "Added new content in the file" >> index1.html
+
+# git status
+
+# git diff index1.html
+Stage the modifications
+
+# git add .
+
+# git diff --staged index1.html
+
+Commit the staged changes
+
+# git commit -m "modifications added"
+
+==============================================
+Restore and Revert operations:
+==============================================
+
+Demo 3: Restore the file to its old version
+====================================
+#  echo "Added more content in the file" >> index1.html
+
+File status will be modified
+
+# git status 
+
+See the new changes 
+
+# git diff index1.html
+
+
+Discard all the modified lines from a file in working directory
+
+The changes are removed permanently, you cannot get them back.
+
+# git restore index1.html
+
+# git status
+
+# cat index1.html
+
+Demo 4: Restore staged changes to working directory
+===========================
+Again make changes into the file
+
+
+# echo "Added more content in the file" >> index1.html
+
+# git status
+
+# git add .
+
+Modifications will be in the staging area
+
+# git status
+
+Move the changes from staging area to unstaged area or working directory
+
+# git restore --staged index1.html
+
+For your information: Remove all files from staging re to unstaged area
+
+# git restore --staged .
+
+=================================================
+
+Revert Command in GIT
+================================
+
+Git gives us an Operation called as Revert using which once can revert the changes done in a commit ID to it previous version
+
+In case of revert operation we are making changes on the local repository by reverting to the previous version of the file → so revert command will always generate a new commit ID
+
+Revert command is performed on a single commit id
+
+We can revert a single commit at a time
+
+As soon as revert command is executed git will open an nano editor for us to give the reason/message why are we reverting this commit.
+
+As soon as we save the editor , Git will also generate a new commit id for the revert operation.
+
+Demo:
+==============================
+
+# git status
+
+You working tree should be clean
+
+# git ls-files
+
+Delete a file that is in local repo and working directory
+
+Git command to delete a file from LR and WD
+
+# git rm index1.html
+
+# git status
+
+# git commit -m "deleted file"
+
+# git log --oneline
+
+# git revert <commitID>
+
+Add message in the nano editor on first line and save the file
+
+Save on nano editor
+Press CTL x
+Press y
+Press enter key
+
+A new commit will be generated for the revert operation
+
+# git log --oneline
+
+File is back
+
+# ls
+
+# git ls-files
+
+==============================================
+
+GIT reset command
+===============================================
+
+
+Create a new file --> commit on it
+
+touch resetdemo
+git add .
+git commit -m "added a new file resetdemo"
+
+Make some small modification on the file --> commit on it
+Make some small modification on the file --> commit on it
+Make some small modification on the file --> commit on it
+Make some small modification on the file --> commit on it
+Make some small modification on the file --> commit on it
+
+Which mean I will have a very length git commit history
+
+Every small change I have committed it
+
+We always want a clean and crisp commit history
+
+Git says, you can RESET your commit history
+
+   that means:
+     > we can Change the HEAD of the log
+     > we can delete commit ids
+     > we can move the changes from LR to Staging area
+     > we can move the changes from LR to Working area
+     > we can also permanently delete commits and changes in 
+LR and working directory
+
+the command is : git reset <commit id>
+
+What is it that we have to reset, > we want to reset the HEAD to the given <commit id>
+
+#  git reset d573778
+
+So what about the commits before the given the <commit id> --> they will get deleted
+
+So what about the changes we did as part of those commits?
+
+
+
+
+
+--hard
+=============================
+Observation: 
+ > In the git log, the commit history is reset -> all the commits which are above the given <commitID> get deleted
+ > Now the HEAD is the  <Commitid> given in the command
+ > All the changes of the deleted commits will also be permanently deleted
+
+
+
+# git log --oneline
+
+Select the commit id which is at the bottom of your log.
+
+
+
+# git reset --hard <commit id>
+
+Example : git reset --hard 04f432e
+
+
+
+
+
+Soft:
+=======================
+
+# echo "add content" >> index1.html
+
+# git add .
+
+# git commit -m "done modification1"
+
+
+# echo "add content again " >> index1.html
+
+
+# git add .
+
+# git commit -m "done modification2"
+
+# echo "add content again 123 " >> index1.html
+
+
+# git add .
+
+# git commit -m "done modification3" 
+
+
+# git log --oneline
+
+
+# git reset --soft <commitID>
+
+
+
+
+
+--soft:
+
+    Observation: 
+     > In the git log, the commit history is reset -> all the commits which are above the given <commitID> get deleted
+     > Now the HEAD is the  <Commitid> given in the command
+     > All the changes of the deleted commits will be back to the staging area.
+
+
+
+# git commit -m "all modifications together"
+
+
+# git reset --mixed <commit id>
+
+--mixed
+
+Observation: 
+ > In the git log, the commit history is reset -> all the commits which are above the given <commitID> get deleted
+ > Now the HEAD is the  <Commitid> given in the command
+ > All the changes of the deleted commits will be back to working directory
+
+
+# git add .
+
+# git commit -m "all modifications together"
+
+# git status
+
+See all the reset operation
+
+# git reflog
+
+
+
+
+Day 5: Agenda - 01-Feb-2025
+=================================
+Branching and Merging
+Rebase 
+Conflicts  and resolve merge conflicts
+Git stash
+
+
+the lab is reset, pls execute below steps:
+
+# sudo su -
+
+# mkdir myproject && cd myproject
+
+# git init
+
+# git config --global user.name admin
+
+#  git config --global user.email admin@gmail.com
+
+# touch index1.html index2.html
+
+# git add .
+
+# git commit -m "add files"
+
+# git log
+
+
+Check the files in the local repo
+
+# git ls-files
+
+Branching & Merging
+==========================
+
+
+Command to see how many branches do we have in out local repo:
+
+$ git branch
+
+
+$ git status ⇒ working tree should be clean
+
+
+Command to create a branch with name as feature1
+
+$ git branch feature1
+
+Command to switch to branch with name feature1
+
+$ git checkout feature1
+
+Switched to branch feature1
+
+Create a new file on the branch feature1
+
+$ touch login
+
+$ git status
+
+Untracked file
+
+
+$ git add login
+$ git commit -m “done on branch”
+$ git log --oneline
+
+Merging the feature1 branch to master branch
+========================
+
+By merging we mean 
+
+The source branch → login has commits that will be merged to destination branch master
+
+Always Switch to the destination branch where we have to merge
+
+$ git checkout master
+
+$ git merge feature1 master
+
+$ git log --oneline
+
+All commits of login are present in master also, login file is also there on master branch
+
+=====================================
+
+Delete a Branch which has been merged: 
+
+# git branch -d feature1
+
+Delete a Branch which has been merged to master:
+
+# git branch -D feature_dev
+
+Recover a branch back using the hash
+
+# git checkout -b feature_dev <commit_hash>
+
+Get the hash from the command
+
+# git reflog
+=======================================
+Rename of the branch
+==========================================
+# git branch -m <old_branch> <new_branch_name>
+
+# git branch -m feature_dev feature1
+
+==========================================
+Assignment/ Practice after the session
+==========================================
+
+Cherry pick merging:
+=======================
+If we have to merge 1 or more commits to the master branch then use cherry-pick command
+
+It will not merge all the changes form the branch but only few commit changes will be merged on the master branch
+
+Create a new branch --> add some new changes --> do 2 or 3 commit on the branch 
+
+Switch to master --> merge only 1 commit changes on the master --> cherry pick
+
+# git checkout -b branch01
+
+# touch file11
+
+# git add .
+
+# git commit -m "added file11"
+
+# touch file12
+
+# git add .
+
+# git commit -m "added file12"
+
+# git log --oneline [copy the commit id to be merged to master]
+
+Now switch to master branch
+
+# git checkout master
+
+
+# git cherry-pick <commiID>
+
+The required change from the branch will be merged on the master
+
+# ls
+======================
+Rebasing Merging strategy in GIT
+============================
+
+
+
+# git branch -D <branchName>
+
+Delete all the branches except master
+
+# git branch
+
+
+# git log --oneline
+
+Delete all commits except last 2 commits
+
+# git reset --hard <commitID>
+
+Create  a new Branch
+
+# git branch feature1
+
+# git branch
+
+Now create a new commit on MASTER
+
+# touch filenew1
+# git add .
+
+# git commit -m "done on Master branch"
+
+
+
+Switch to feature and create new commits
+
+# git checkout feature1
+
+# touch file01
+# git add .
+
+# git commit -m "done on feature branch"
+
+# touch file02
+# git add .
+
+# git commit -m "done on feature branch"
+
+# git log --oneline
+
+So you should be switched to feature branch
+
+# git rebase master
+
+# git log --oneline
+
+
+Now you will have all commits of master and then all the commits of feature1 branch are present in the log.
+=======================================
+
+Conflicts and resolving conflicts on branches in GIT
+======================================
+
+Part 1: How conflicts occur in git
+======================================
+Conflict : when we have the same file with different content on different branches.
+
+
+In this case if we try to merge the 2 branches a Conflict will arise and auto merging of file content will fail
+
+# git checkout master
+# git branch -D feature
+
+Create a new branch
+# git branch login_feature
+
+# git branch
+
+On the master branch create a file with name as login
+
+# vim login
+
+Insert some data
+
+save the file (:wq)
+
+
+# git add .
+
+# git commit -m "login code"
+
+Checkout to login_feature branch
+
+#  git checkout login_feature
+
+Create a new file with same name as login
+# vim login
+
+Insert some data
+
+save the file (:wq)
+
+
+# git add .
+
+# git commit -m "login code"
+
+
+Now merge feature branch on master
+
+# git checkout master
+
+# git merge login_feature master
+
+We should get a conflict and below message
+
+Auto-merging login
+CONFLICT (add/add): Merge conflict in login
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+Part 2: Resolving the conflict
+=============================================
+
+Resolving of the conflict is performed manually 
+On the master branch
+
+# vim login
+
+Remove the extra lines which have special characters line like this: 
+>>> 
+<<<
+
+SAVE THE file (:wq -> press enter key)
+
+
+Commit and add the changes
+
+#  git commit -a -m "resolving conflict"
+
+============================================
+GIT STASH
+============================================
+
+Modify a file 
+
+# echo "added content" >> login
+
+# echo "added content" >> index1.html
+
+# git status
+
+Modified files
+
+Stash is a concept in which we dont want to commit the modifications or work in progress
+
+
+The changes that i have in working directory I dont want to discard them nor i want to commit
+
+So we will stash them → storing them in a temporary location
+
+Location: .git/refs/stash
+
+For doing this the command is : 
+
+# git stash
+
+All the modifications and changes form working directory will be picked up and stashed
+
+
+# git stash list
+
+# git stash list --stat
+
+Drop the stash and changes are back to working directory
+On current branch
+
+# git stash pop stash@{0}
+
+
+================================================
+Agenda: Day 6: 02 Feb 2025
+==============================================
+Remote Repositories with GitHub
+Push, pull, fetch from github to git
+Clone and forking
+Pull requests on github
+Continuous Integration with Jenkins
+
+
+
+To create account in github:
+
+https://github.com/
+
+
+
+Click on signup
+
+Given valid email address
+Give password
+Give username
+Click on continue.
+
+
+
+An email will be sent on your mail id
+Verify the email
+And create the account
+
+> Login to github
+
+
+
+
+
+
+
+
+
+
+
+Continue for free
+
+
+
+You will be on the github dashboard.
+
+Working on Remote repository:
+================================
+
+
+
+
+
+Create a repository:
+
+
+> click on New button to create a remote repo
+> Name to the repository
+> select public repo
+> click on Create repository
+
+
+
+
+
+
+
+On the Lab – as it has been reset, lets create the working directory and local repository
+
+
+# sudo su -
+
+# mkdir myproject && cd myproject
+
+# git init
+
+# git config --global user.name admin
+
+# git config --global user.email admin@gmail.com
+
+# touch file1 file2
+
+# git add .
+
+# git commit -m "done on LR"
+
+Connect Local repo to remote repo
+
+Go to git and execute this command
+
+  $ git remote add origin <your remote repo Path>
+
+Example like this:
+…
+ git remote add origin https://github.com/Sonal0409/myproject27June_sonal.git
+…
+
+Execute the command to check local and remote repo is set:
+
+  $ git remote -v
+
+
+Create a Personal Access token on GITHUB to push your changes
+
+Personal access tokens (classic) function like ordinary OAuth access tokens. They can be used instead of a password for Git over HTTPS
+
+GO to this link:  https://github.com/settings/tokens
+
+
+
+Push Changes to GITHUB repo
+
+# git push origin master
+
+Here origin means variable storing path of remote repo 
+
+
+It will now ask to enter username
+
+Username for 'https://github.com':
+
+Here enter the token and press enter key
+
+Again it will ask for password
+
+Password for 'https://ghp_mJ92gregYqNggrggd8AY1NxkWpYigter345Q6PHAM7VxuLg26F4wB@github.com':
+
+JUST PRESS ENTER KEY, do not enter anything for password
+
+It will send the files and commits to remote.
+
+=========================================
+   PULL Workflow command
+========================================
+Create a new file on the remote repository master branch
+
+Now go to lab machine and execute below command
+
+  	# git pull origin master
+
+Pull command will fetch new files and changes and merge them with local repo and working directory
+
+===================================
+Fetch from github (Do not perform right now)
+===================================
+
+On remote if we have many files and changes
+we can just fetch them all
+and merge only the required file
+using fetch command
+if you will do pull operation --> ftech all the changes merge the changes to LR
+
+# git fetch origin master
+
+Merge a specific file
+
+# git checkout origin/master <file_name>
+
+
+============================================
+
+Forking on Github
+=============================================
+
+Copying the github repo of a user into your own github account
+
+Forking operation will allow you to freely experiment changes on repo copied from other
+
+
+Demo: Collaboration with other repo on github
+====================================
+
+Step 1:
+
+Take a parent repository and make copy of it in your github account
+
+> You should be logged into github
+
+> In the browser of your machine open this repository:
+https://github.com/Sonal0409/myproject27June_sonal.git
+
+> Click on the fork button
+
+
+
+
+
+Step 2: 
+Make some changes by creating a file in your copied repo on your github account
+
+
+
+
+
+
+
+Step 3: Raise a request with parent repo to merge you files and changes
+
+We will contribute and raise Pull requests in github
+
+
+
+
+
+
+
+Click on create pull req
+
+
+
+Sync the 2 repositories
+=====================
+If parent repo is having changes/files thata r enot in your copied github repo
+Then you can click on Sync button → update branch button and merge the changes between 2 repo
+
+
+
+Cloning
+=========================
+
+It is a command to be executed on git terminal
+
+When we execute git clone command
+
+We will be able to to copy a remote repo to our local terminal
+
+# sudo su -
+
+# git clone <repoName>
+
+# git clone https://github.com/Sonal0409/myproject27June_sonal.git
+
+
+
+
+
+
+====================================
+
+Tags:
+
+Light weight tags:
+
+# git tag release-june
+
+It will add a tag to top most commit
+
+
+# git tag --list
+
+Remove a tag
+
+
+# git tag --delete release-june
+
+
+Annotated tags : tags to specific commit id
+=====================
+
+# git tag -a v1.1 -m "may-release" <give your commit>
+
+Example:
+git tag -a v1.1 -m "may-release" d88fcd8
+
+# git log --oneline
+Agenda : 08 Feb 2025
+===================================
+Continuous Integration 
+Continuous Integration tools
+Jenkins and its features
+Connect to jenkins dashboard on the lab
+Install and update the initial plugins
+create jobs in jenkins
+Maven and build a java project
+
+=========================================
+With Devops we have to automate the entire process of Build
+This can be achieved by using  an automation tool that will manage integration with
+ - Version control tool - to fetch the code
+ - Build tool - to compile, review, test and package the code
+Various build tool : Maven, Ant , gradle, MSbuild, pybuilder
+
+ The integration/automation tool is Jenkins
+ We have many integration tools like:
+ Jenkins 
+ Gitlab CICD
+ travis
+ bamboo
+ teamcity
+ Github actions
+ Airflow
+ 
+The integration service on various cloud platforms:
+ AWS- code pipeline
+ Azure-Azure pipelines
+ GCP - Code build 
+ Digital ocean - pipelines
+ 
+Jenkins:
+===============
+It is an automation tool that integrates with various tools to provide an automated SDLC pipeline 
+Jenkins can automate entire build and automation process 
+It is an automation server, Jenkins support building, deploying and automating any project.
+Pls note: 
+jenkins is not a build tool 
+jenkins is not a testing tool 
+jenkins is not a deployment tool 
+jenkins is not a monitoring tool 
+
+Jenkins features:
+==================
+> Open source tool, free
+> Enterprise version of Jenkins can also be used which is provided by cloudbees.
+> Jenkins is a java based tool 
+> for us to install and work with Jenkins we have to first install java(JDK) version 17 OR 21
+> Jenkins can be installed on windows, Mac or linux OS
+> Jenkins is a plugin based tool
+plugin - an extension, a small tool that enhances the capability of the main tool 
+> Jenkins has 100s of plugins to support integration process with various tools 
+For example: If we want Jenkins to send notification to our slack channel than we download 
+slack notification plugin on jenkins that will help to configure jenkisn+slack integration 
+> CICD pipelines : In Jenkins we make use of declarative pipeline syntax to write pipeline code 
+Pipeline -> a set of tasks which are executed one after the other in a sequence
+To create the pipeline - we have to write pipeline code 
+It is written in declarative pipeline syntax - which is based on groovy scripting
+> Secure tool -> security features -> Matrix based security or project based security
+> We can create users and give them role based access to them
+> We can setup a high availability server and can ensure regular backup of Jenkins server 
+> Jenkins Controller -> main VM where we have all the pipelines created but they are not exeucted on this VM
+Rather the controller is connect to agents where the piplines and tasks are executed.
+This setup is called master and Agent setup in jenkins.
+
+We will work on the jenkins dashboard instead of the terminal.
+
+Setup jenkins on the Lab
+====================
+
+Go to browser of the Lab
+Give URL as : localhost:8080
+
+Username: admin
+Password: Root123$
+
+You will be on jenkins dashboard
+
+
+
+
+
+
+For the setup to be complete, we have to update the jenkins plugins
+
+Go to manage jenkins → Scroll down to Plugins
+
+
+
+
+Click on updates:
+
+
+
+
+Select the checkbox for updates and click on update button
+
+Give few mins for updates to complete
+
+Now reset jenkins
+
+Scroll down and click on checkbox to restart jenkins server
+
+
+
+===============================================
+Hardware req for jenkins:
+4GB RAM and 2CPU core
+
+Steps to Install jenkins on UbuntuOS:
+========================================================================
+
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu 
+
+\
+Steps to Install jenkins on Amzon Linux or RHEL OS:
+========================================================================
+
+https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos
+
+
+Install jenkins on Windows:
+=========================
+https://www.jenkins.io/doc/book/installing/windows/
+
+Steps to Install jenkins  on Ubuntu 22
+
+Install java version 17
+
+# sudo apt update
+
+# sudo apt install openjdk-17-jdk -y
+
+Install jenkins on Ubuntu 22:
+
+sudo wget -O /usr/share/keyrings/jenkins-keyring.asc https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+systemctl start jenkins
+
+
+Install Jenkins on Amazon Linux 2023
+
+sudo dnf install java-17-amazon-corretto-devel
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+sudo yum upgrade
+sudo yum install jenkins
+sudo systemctl daemon-reload
+
+
+
+
+Demo 1: Create a Jenkisn job that will execute linux commands.
+=========================================
+
+
+Create a new job in jenkins
+Click on + sign to create new item/job/project
+Give a name to the job : Job1
+Select freestyle project and click on OK button
+Go to build Steps→ select Execute Shell→ give commands like
+touch file1
+echo “hello Jenkins!”
+
+Save the job → click on build Now button.
+
+
+See the console output and check the workspace directory.
+
+Workspace directory is in : /var/lib/jenkins/workspace/Job1
+
+
+
+Jenkins Integration with Git and Github-> Source code management tool
+============================================
+
+Demo 2: Create a Jenkisn job that will clone a github repository in jenkins workspace
+
+Create a new job in jenkins
+Click on + sign to create new item/job/project
+Give a name to the job : CloneRepo
+Select freestyle project and click on OK button
+On the project click on Source code management
+Select git option
+Give git hub repo path
+https://github.com/Sonal0409/myproject-03Feb-Sonal.git
+
+Branch name as ===>  Master
+
+Save the job
+
+Click on Build now
+
+Repository will be cloned in jenkins workspace
+
+You can go to job → workspace folder to see the files
+Workspace directory is in : /var/lib/jenkins/workspace/CloneRepo
+
+Demo: Maven Integration with jenkins
+=============================
+
+Jenkins--> Manage Jenkins-->Tools
+
+Under GIT==> leave it same 
+
+Under maven ==> lets install it automatically
+
+Type: 
+Name as : mymaven and 
+check the install automatically box.
+Save the changes
+
+We can check maven installation in the following location
+
+# cat /var/lib/jenkins/hudson.tasks.Maven.xml
+
+When jenkins installs a tool its scope is only /var/lib/jenkins directory -> JENKINS_HOME
+
+===================================
+MAVEN : 
+=========================
+> A build tool used for Java and spring boot projects
+
+> It is a powerful tool which helps in building, managing and documenting your project
+
+> Maven by heart is a plugin based tool
+
+> whenever a maven plugin and command is executed, its output will be stored in folder called target
+
+> It has 2 types of plugins:
+
+Core Build plugins:
+=====================================================================================
+Task  					Plugin		GOAL/Commands 	     		output
+=====================================================================================
+Compile the code  		Compiler				        mvn compile			class files
+
+execute some Testcases 	Surefire				        mvn test			test passed/failed status
+
+Package the code		package			   	     mvn package          		  .war file
+
+Clean the previous build	 clean			                          mvn clean		clean up from target folder
+files
+
+install all dependencies	  install				     mvn install
+
+
+In maven multiple goals can be executed together
+
+# mvn clean install package
+
+
+
+Reporting plugins:
+==============================
+Will always generate reports, and in maven the reports are mostly generated in the format : xml,html,txt
+
+Task  			Plugin		GOAL/Commands 	                       output
+
+Code Review	       pmd			mvn pmd:pmd		               pmd.xml report	
+
+test reports	     surefire			mvn test		              surefire reports - xml,txt
+
+Code coverage  JACOCO,sonarqube		mvn sonar:sonar
+
+
+
+Structure MAVEN project
+
+src/main/java   ==> source code will be present
+src/test/java   ==> test cases will be present
+
+pom.xml   ==> heart of maven project
+
+ 1. dependencies   ==> tools downloded by developer to write code
+ 2. plugin information
+ 3. Repositories ( local, central & remote)
+URls or location from where we have to download the plugin or dependency
+
+===============================================
+
+Agenda: 09-Feb-2025
+=============================
+> Build Java code and create an upstream and downstream pipeline using freestyle project
+> Declarative and scripted pipeline syntax
+> Learn how to write pipeline as code
+> Write pipelines to compile, test and build java code
+> Jenkinsfile
+> parallel execution of stages in pipeline
+> error handling in pipelines
+
+===============================================
+
+Setup jenkins on the Lab
+====================
+
+Go to browser of the Lab
+Give URL as : localhost:8080
+
+Username: admin
+Password: Root123$
+
+You will be on jenkins dashboard
+
+
+
+
+
+
+For the setup to be complete, we have to update the jenkins plugins
+
+Go to manage jenkins → Scroll down to Plugins
+
+
+
+
+Click on updates:
+
+
+
+
+Select the checkbox for updates and click on update button
+
+Give few mins for updates to complete
+
+Now restart jenkins
+
+Give this URL in the browser and press enter
+
+localhost:8080/restart
+
+Press yes button
+
+Jenkins will take a few seconds to restart.
+
+
+
+
+Reset the Maven configuration on the Lab
+====================================
+Jenkins--> Manage Jenkins-->Tools
+
+Under GIT==> leave it same 
+
+Under maven ==> lets install it automatically
+
+Type: 
+Name as : mymaven and 
+check the install automatically box.
+Save the changes
+
+
+CREATION OF maven COMPILE JOB
+***********************************
+
+1. new Job → 1.compile  → freestyle project
+2. Go to Source code management --> select git
+--->give git path ===> https://github.com/Sonal0409/DevOpsCodeDemo.git
+
+3. Build steps ==> select invoke top level maven targets
+   select maven version===> mymaven
+    goal ==> compile
+4. save ==> build now 
+So all the compiled files will be present at this location
+
+
+==> look for this line in console output at the end on jenkins
+Compiling 13 source files to /var/lib/jenkins/workspace/compile1/target/classes
+
+5. Go to workspace on the left side of jenkins Job compile
+In the folder go to ==> target folder==> go to classes
+******************************
+CREATION OF maven Code Review JOB
+***********************************
+
+1. new Job → 2.CodeReview  → freestyle project
+2. Go to Source code management --> select git
+--->give git path ===> https://github.com/Sonal0409/DevOpsCodeDemo.git
+
+3. Build steps ==> select invoke top level maven targets
+   select maven version===> mymaven
+    goal ==> pmd:pmd
+4. save ==> build now 
+
+Now go to ManageJenkins → plugins → available plugins → search for warnings plugin → select the warning plugin → click on install
+
+
+
+
+
+Maven pmd:pmd --->pmd.xml -> we want to see the repot in must better format like a trend report
+
+We make use of Jenkins plugin --> provides a plugin with name as warnings --> download it
+
+Feed the warning plugin with your pmd.xml file--> it will convert it to trend report
+===============
+Now go back to the job 2.codeReview
+
+Go to post build steps and select Record compiler warnings and static analysis results 
+
+
+
+Give the below details
+
+
+
+Save the Job and Build again
+
+Click on the build number → on left side you will see PMD warnings
+
+
+
+
+Creation of Maven Test Job
+===================================
+
+
+Go to jenkins--> new item--> Name= 3.Test==> freestyle project
+==> source code management==>select git==> give git repo 
+https://github.com/Sonal0409/DevOpsCodeDemo.git
+ 
+build ==> invoke top level maven target⇒
+Version: mymaven
+
+ goal = test
+
+==> save==> build now
+==> click on build number and see the console
+
+Convert maven XML report into Jenkins test report
+
+On the Job → Click on Configure → Click on post build actions→ select the option : Publish JUnit test result report → Add test report XML as target/surefire-reports/*.xml  -> Save and Build the job
+
+
+
+============================================
+
+Package Job
+***************************
+
+Go to jenkins--> new item--> Name= 3.Package==> freestyle project
+==> source codemanagement==>select git==> give git repo
+https://github.com/Sonal0409/DevOpsCodeDemo.git
+ 
+build ==> invoke top level maven target==>mymaven
+
+ goal = package
+
+==> save==> build now
+==> click on build number and see the console
+
+==> go to workspace ==> target/addressbook.war
+
+=========================================
+
+Upstream and downstream Pipeline
+=========================================
+
+Pipeline is nothing but set of jobs executed  one after the other
+
+Upstream and downstream Pipeline -> We take individual freestyle jobs and connect them together making  a pipeline, then with just a single click the jobs will run in a queue
+======================================
+
+
+
+
+
+
+Download the Build Pipeline plugin and setup the view
+
+
+
+
+
+
+
+
+
+
+Pipeline as Code in jenkins:
+==========================
+
+pipelines Using plugins are called as Plugin based pipelines or Upstream and downstream pipelines
+These pipelines are created using freestyle jobs.
+
+Jenkins allows us to create multiple task in one single job.
+
+Whenever a user has to preform set of tasks one after other (in a sequence) or in parallel, it can easily be done using 
+pipeline project template in Jenkins
+
+Pipleines in jenkins are nothing but set of task executed in sequence(by default) 
+
+When a user is creating a pipeline we will have to write code for it.
+
+Jenkins comes with an inbuilt pipeline syntax generator - using which we can give some inputs and pipeline code will be generated automatically. 
+
+The pipeline code is based on Groovy scripting which is Domain specific language
+
+It is declarative in nature
+
+key 'value'
+
+Example:
+
+name 'Jenkins'
+tool 'CICDtool'
+Training 'DevOps'
+
+Here the key is mostly will be given to you by Jenkins, value the user has to provide
+
+
+In Jenkins pipeline code using 2 types of syntax
+
+ > Scripted pipeline syntax
+=======================================
+> scripted pipeline syntax always starts with a keyword called as node
+> When Jenkins version1 came in to the market, the admin used scripted pipeline syntax to write pipeline code
+> scripted pipeline syntax is difficult to read and write.
+> there is no structure or no definite style which writing the code
+> The code written scripted pipeline syntax is not validated by Jenkins
+> This syntax is no longer used
+> if the pipeline fails, you have to run the pipeline from the beginning
+
+ > Declarative pipeline syntax
+========================================
+> Declarative pipeline syntax always starts with a keyword called as pipeline
+> With jenkins version2, Declarative pipeline syntax was introduced
+> This is well structured syntax, where user is provided with definite pipeline sections
+> we need to just declare the pipeline code
+> It declarative in nature, syntax is very simple
+> if the pipeline failes, you can restart the pipeline form the point that it had failed previously
+> Stages in pipeline means Job to be executed
+> Every stage will have a Name in the pipeline, steps to be executed, post build steps, 
+> jenkins provides a pipeline code snippet generator, that helps your to learn pipeline scripting very fast
+
+Syntax:  key 'value' 
+for example:
+ name 'Jenkins'
+ sh 'echo "hello All"'
+
+Structure of Declarative pipeline syntax
+
+=========================================
+
+pipeline{
+
+ tools{
+  // names of tools configured that jenkins  will use while executing the pipleline
+}
+
+agents {
+ // name of the server where jenkisn can dispatch the jobs
+}
+
+parameters{
+               name 'Sonal'
+}
+
+triggers{
+
+
+
+}
+
+// to write comments
+// stages is the mandory section in a pipeline
+stages{
+
+stage('job1'){
+
+steps{
+        sh 'echo $name'   
+}
+
+}
+
+parallel {
+
+stage('job2'){
+
+steps{   //build steps
+           // what shoudl this job do
+}
+
+}
+
+stage('job3'){
+
+steps{
+           // what shoudl this job do
+}
+
+}
+
+}
+
+
+
+}
+ 
+
+}
+
+==============================
+
+Demo pipeline - 1
+===================
+
+pipeline{
+    
+    agent any // any available server - current server where the pipeline will execute
+    
+    stages{
+        stage('Job1'){
+            steps{
+                sh 'touch file1'
+            }
+        }
+    }
+    
+}
+
+
+
+
+Demo Pipeline 2
+===================
+Click on New item → give name- Build_pipeline → select pipeline template → press oK
+
+Enter the below code
+
+pipeline{  
+    agent any  // this is mandatory
+    
+    tools{
+        maven 'mymaven'
+    }
+    
+    stages{
+        stage('Clone Repo'){
+            steps{
+                git 'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+            }
+        }
+        stage('Compile Code'){
+            steps{
+               sh 'mvn compile' 
+            }
+        }
+         stage('Review Code'){
+            steps{
+               sh 'mvn pmd:pmd' 
+            }
+        }
+        stage('Test Code'){
+            steps{
+               sh 'mvn test' 
+            }
+        }
+        stage('Package Code'){
+            steps{
+               sh 'mvn package' 
+            }
+        }
+    }
+    
+}
+
+Save the job and Build it
+
+========================================
+Agenda: 15-Feb 2025
+=======================================
+> Jenkinsfile
+> Parameterized pipeline & condition based pipleine
+> multibranch pipeline
+> Deployment on tomcat
+> Slack integration 
+
+
+
+
+
+Lab has been rest-> update the plugins in jenkins 
+
+Setup Maven under Manage Jnekins —> tools → Maven installations at the bottom -> click on add maven → give name as mymaven → save
+
+Restart Jenkins
+
+====================================
+
+1. It is better that you write and maintain your pipeline code in Github, so that many team members can collaborate to the pipeline
+2. it allows version control the changes done on pipelines.
+
+3. How will jenkins read pipeline code from github?
+
+Jenkins uses the concept of Jenkinsfile
+
+It is a simple text file. it has no extention 
+Name is preffered as Jenkinsfile
+This is the file in which we will maintain pipeline code Version control
+
+
+Jenkins--> pipelinetemplate--> fetch jenkins file--> execute pipeline code for you.
+
+
+
+
+Multibranch demo github repo:
+
+https://github.com/Sonal0409/MultiBranchDemo.git
+
+Create a new Job → give name as MultibranchDemo → select project as Multibranch Pipeline → select the source as git and give repo as https://github.com/Sonal0409/MultiBranchDemo.git
+
+Save the job and you will see multiple pipeline jobs created
+
+
+=============================================
+Install Tomcat Server on the lab
+===========================================
+
+Open the terminal on the lab
+
+# sudo su -
+
+# apt update
+
+# apt install tomcat9 tomcat9-admin -y
+
+
+Update user information for tomcat
+
+# vim /etc/tomcat9/tomcat-users.xml
+
+Scroll to the bottom of the file and just above the end tag </tomcat-users>
+
+  paste the below line
+
+<user username="tomcat" password="password" roles="admin-gui,manager-gui,manager-script"/>
+
+
+
+
+There should not be any space before the line
+
+
+
+
+
+Save the file (:wq!)
+
+
+Open the server.xml file and change the connector port of tomcat
+
+        vim /etc/tomcat9/server.xml
+
+Scroll down to Connector port tag as shown below and change port number to 9090.
+
+ 
+
+
+
+Save the file
+
+
+Open this script
+
+# vim /usr/libexec/tomcat9/tomcat-locate-java.sh
+
+Update as below 
+
+Updating the script this way adding the version 21 is solving the issue :
+find_jdks() 
+{ 
+for java_version in 21 17 11 10 9 8 
+do
+
+Save the file.
+
+
+
+Restart tomcat
+
+# systemctl restart tomcat9
+
+To check tomcat is up and running
+
+Go to browser and type localhost:9090
+
+
+
+
+
+
+==============================
+
+
+
+Now go to jenkins dashboard
+
+Go to managejenkins→ plugins → Available plugins
+
+Search for deploy to container plugin
+
+Select it and click on install button
+
+
+Create a new freestyle Job→ Add the github repo in SCM  https://github.com/Sonal0409/DevOpsCodeDemo.git
+
+→ add build steps -> select invoke top level maven target → select maven version mymaven → give goal as package
+→ go to post build actions and select Deploy war/ear to a container
+
+
+
+
+
+
+Add the container as show above
+
+Now add credentials
+
+
+
+
+
+
+
+
+
+Click on add button for credentials to be added
+
+You will see the credential in the drop down
+
+
+
+
+
+
+
+
+Add the URL as : http://localhost:9090/
+
+Save and build the job
+
+Check the deployed application on browser:
+
+http://localhost:9090/addressbook/
+
+
+
+
+
+
+===================================
+CICD Pipeline
+====================================
+
+Create a new job → select pipeline project →press ok → 
+click on  pipeline tab →  give below code, 
+
+Note: In the below code for deployment, change the credentials id.. Give your credentials id-  like tomcatcredentials
+
+
+pipeline{
+    
+    agent any
+    
+    tools{
+        maven 'mymaven'
+    }
+    
+    stages{
+        stage('checkout code')
+        {
+            steps{
+                git  'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+            }
+        }
+        
+        stage('Build and Deploy the Code')
+        {
+            steps{
+                sh 'mvn  package'
+            }
+            
+            post{
+                
+                 success{
+                    deploy adapters: [tomcat9(credentialsId: tomcatcredentials, path: '', url: 'http://localhost:9090/')], contextPath: null, war: '**/*.war'
+                }
+                
+            }
+        }
+        
+    }
+    }
+    
+
+Save it and run it
+  Click on stages to see the execution.
+ 
+===================================
+
+Agenda: 16-Feb-2025
+===================================
+> Integration of Jenkins with a Slack notification tool
+> How to trigger Jenkins Job from a slack channel
+> Email notification plugin in Jenkins
+> Import jobs from one Jenkins server to another Jenkins server - Import Job plugin
+
+
+
+
+Reset the lab → Open jenkins → admin/Root123$
+updating all the plugins
+Setup Maven tool
+Restart Jenkins -> localhost:8080/restart
+
+=====================================
+Demo1: Integration of Jenkins with a Slack notification tool
+=====================================
+Pls take screenshots of each of the step in your machine 
+
+Step 1: Login into Slack
+
+
+Create a slack workspace and a slack channel
+
+Go to : https://app.slack.com/
+
+Enter you email id on the first page
+Enter the confirmation code 
+Press continue
+Click on Create Workspace
+
+What’s the name of your company or team? : give as => slack-demo
+This will your workspace name
+
+
+
+Press next→ press next → and then skip the last step. -> click on skip this step
+
+What’s your team working on right now? => give as Jenkins-demo ⇒ this will your channel name
+
+
+
+Step 2: Integrate Jenkins app with Slack tool
+==========================================
+Click on the channel drop down which is in the middle of the page
+
+
+
+Click on Integrations → Click on add an ApP
+
+Search for Jenkins → Click on install
+
+
+
+
+
+
+Click on Add to slack
+
+
+Select you channel name 
+
+
+
+Click on add Jenkins CI integration
+
+
+
+
+
+
+
+
+
+Copy the team domain name and token details
+
+
+
+
+Step 3: Install Slack plugin in Jenkins and configure it
+================================
+
+
+Install slack notification plugin on jenkins:
+==============================
+
+Manage Jenkins → plugins → available plugins → slack notification → click on install button
+
+
+
+
+Setup slack on jenkins:
+=====================
+
+Manage Jenkins → System -> Search for slack
+
+In workspace add the subdomain name that we have copied from slack app directory(step3)
+
+Create credentials to setup slack token
+
+Credentisls kind = secret text
+
+
+
+
+
+
+Enter the channel name which you have created on slack
+
+
+
+
+
+Save the changes
+
+Save the changes
+
+Now take any freestyle job that is already existing
+
+Clcik on the job name→ configure → go to post build actions → Select options number 1 and 2
+
+
+
+
+
+
+
+
+Create a new Job → select pipeline template→ enter below code
+Change your channel name in the below pipeline code
+
+Pipeline for notification
+=========================
+
+pipeline{
+    agent any
+    tools{
+        maven 'mymaven'
+    }
+    stages{
+        stage('Build Code'){
+            steps{
+                git  'https://github.com/Sonal0409/DevOpsCodeDemo.git'
+                sh 'mvn package'
+            }
+            post{
+                success{
+                  slackSend channel: 'jenkins-demo', message: 'Pipeline Job executed successfully'  
+                }
+                failure{
+                   slackSend channel: 'jenkins-demo', message: 'Pipeline Job failed..' 
+                }
+            }
+        }
+    }
+}
+
+======================================
+Step 4: Setup a trigger in Jenkins job so that it can be executed from slack
+
+Select a Jenkins job and create a trigger to run a Jenkins job from a  remote server.
+
+Jenkins Job→ configure→ Build triggers -> Select the trigger -> Trigger builds remotely (e.g., from scripts)
+
+Enter the Authentication token -> give any name to the token → token123
+
+Construct the URL based on the token given
+
+JenkinsURL/job/Pipeline-SlackDemo/build?token=TOKEN_NAME
+ http://localhost:8080/job/SlackPipeline/build?token=token123
+
+
+Manage Jenkins → Security-> Select Allow anonymous read access
+
+
+
+
+
+
+Go to Slack Channel and add an APP
+
+
+
+
+
+
+Click on Add to Slack
+
+Now choose a command
+
+Note: command starts with /
+Command will not have a space
+
+
+
+
+
+
+
+On the next page we have to add Jenkins URL details
+
+Scroll down  and enter Integration settings
+
+
+
+
+
+
+
+
+Save the integrations
+
+GO to slack dashboard, and use slack to trigger jenkins job
+
+
+
+
+
+==================================================
+Agenda:22 Feb 2025
+=================================================
+
+GithubActions and its workflows
+CICD workflow using github action
+Course End project to perform CICD using github actions
+
+
+
+
+
+GITHUB ACTIONS:
+======================
+
+> It is a tool provided by github 
+> It is a very simple and easy tool 
+> It comes inbuilt with github, so no need to install it or any server or on the lab.
+> It is an open source tool available for free to use.
+> It is tool which is used to perform automated tasks on the github repository
+> It has limited features like:
+   - creation of workflows(set of tasks)
+   - execution of workflows
+   - dashboard to see the workflows
+> Everything is written in form of code
+> Code is written YAML
+
+=======================================
+JENKINS
+GITHUB ACTIONS
+Depenedent on JAVA - version 17 or 21
+No such dependency
+We have to install jenkins on windows, mac or linux machine
+No installation required.
+We use agents or nodes, we manually provision them and connect them to jenkinsand use them in jobs or pipelines
+It provides ready made runners, that means we are given VM for use - dynamic provisioning
+Create Pipelines for long running jobs
+Create workflows for multiple and long running jobs
+We write code using groovy
+We use YAML - easy
+Provides a sinppet generator to generate the code
+We have actions- ready mode code is available to be used by User
+Jenkins can integrate with any Version control tool like github , gitlab or bitbucket
+Works only with github repo
+We have plugins
+No concept of plugins
+Jenkins has a vast GUI, lot of features and sections
+No such elaborative GUI of github actions
+Jenkisn has its own authentication and authorization
+whatever security settings done on repo, same is applicable to your github actions
+
+
+
+
+=============================================
+
+
+
+
+Demo 1:
+=====================================================
+
+Create a github repo 
+
+
+
+Click on create repository
+
+On the repository→ click on Actions tab → click on set up a workflow yourself 
+
+
+
+
+Add below code:
+
+name: My first workflow 
+on: workflow_dispatch
+jobs:
+  firstjob:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print greetings!
+        run: echo "Hello All"
+      - name: Run multiple commands 
+        run: |
+          echo "Hello Github"
+          echo "This is job1"
+
+
+Save the file. 
+
+Now click on Actions TAB → on the left side of the page you will see your workflow name→ On the right side you will see Run workflow button→ click on it -> click on run workflow
+
+Refresh the page to see the workflow
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Demo 2:
+=======================================
+
+Fork this repository:
+
+https://github.com/demo1orgtoday/MavenBuild-SL.git
+
+Go to the lab -> open the terminal -> install tomcat 9
+
+# sudo su -
+
+# apt update
+
+# apt install tomcat9 tomcat9-admin -y
+
+
+Open the server.xml file and change the connector port of tomcat
+
+        vim /etc/tomcat9/server.xml
+
+Scroll down to the Connector port tag as shown below and change port number to 9090.
+
+ 
+
+
+
+
+Save the file
+
+
+Update user information for tomcat
+
+# vim /etc/tomcat9/tomcat-users.xml
+
+Scroll to the bottom of the file and just above the end tag </tomcat-users>
+
+  paste the below line
+
+<user username="tomcat" password="password" roles="admin-gui,manager-gui,manager-script"/>
+
+
+
+
+There should not be any space before the line
+
+
+
+
+
+Save the file (:wq!)
+
+Open this script
+
+# vim /usr/libexec/tomcat9/tomcat-locate-java.sh
+
+Update as below 
+
+Updating the script this way adding the version 21 is solving the issue :
+find_jdks() 
+{ 
+for java_version in 21 17 11 10 9 8 
+do
+
+Save the file.
+
+
+
+
+# systemctl restart tomcat9
+# systemctl status tomcat9
+
+
+==============================
+Go the repository that you have forked and the repo name is
+MavenBuild-SL
+
+Go to .github/workflows → click on the main.yml file → click on edit button → remove all the code → add the below code
+
+
+name: CICD using Maven and tomcat
+on:
+ push:  # run when there is commit to repo
+ workflow_dispatch:  # run manually
+jobs:
+ CICDjob:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Clone the repo on ubuntu server
+      uses: actions/checkout@v4
+    - name: Install Java and maven on ubuntu server
+      uses: actions/setup-java@v4
+      with:
+       distribution: 'temurin'
+       java-version: '11'
+       cache: 'maven'
+    - name: Build the code 
+      run: mvn package
+    - name: Connect to Lab machine and Deploy the code on tomcat9 
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      with:
+        host: '13.232.171.210'
+        user: 'labuser'
+        pass: 'Nuvelabs123$'
+        port: 22
+        connect_timeout: 10s
+        first_ssh: |
+          sudo chmod 777 /var/lib/tomcat9/webapps    
+        scp: |
+          './target/*war' => /var/lib/tomcat9/webapps
+        last_ssh: |
+          sudo systemctl restart tomcat9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEVSECOPS integration with Jenkins
+===========================
+Demo 1: Snyk tool integration with Jenkins
+
+Snyk Tool integration with jenkins
+======================================
+
+Download the synk security plugin
+
+Manage jenkins → plugins→ available plugins→ search for snyk security → Click on install button
+
+
+Configure Snyk tool
+
+Manage Jenkins → Tools → scroll down to snyk installations -> Add snyk -> give name as snyk -> save the page.
+=======================================
+Demo 2: Setup snyk tool  and generate token to authenticate with Jenkins
+
+Go to the URL : https://snyk.io/  and open it on your laptop browser.
+
+Click on login and then click on Snyk
+
+
+
+
+OR open below URL on your browser
+
+https://app.snyk.io/login
+
+Click on GITHUB
+
+Click on Authorize snyk
+
+
+Click on checkbox and Complete registration
+
+
+
+
+Here select public repositories and  click on next step
+
+
+Click on Authenticate github and complete the 3rd  setup
+
+You will on the dashboard
+
+
+
+
+Click on your name at the bottom → click on account settings 
+
+
+
+In the general section → auth token → click on Key input box → copy the key
+
+Go to Lab:
+
+Manage Jenkins --> scroll to credentials --> click on it --> click on global--> click on add credentials button → In kind dropdown you will see snyk api token
+
+
+
+Ge the Auth token from your Snyk tool which we have generated earlier 
+
+Paste the token
+Give ID as snyktoken
+Give description snyktoken
+Click on create
+
+
+If maven installation has not been done→ pls complete that also
+
+Manage Jenkins --> tools --> scroll down
+maven Installations --> add maven
+give name as mymaven
+and save the page
+
+
+Demo 3: Write a pipeline to perform security testing using snyk tool
+
+pipeline{
+tools{
+maven 'mymaven'
+snyk 'snyk'
+}
+agent any
+stages{
+  stage('clone the repo')
+  {
+    steps{
+        git 'https://github.com/Sonal0409/SonarQubeCoverageJava.git'
+      }
+    }
+  stage('Build the code'){
+    steps{
+        sh 'mvn package'
+    }
+  }
+  stage('snyk Scan'){
+      steps{
+      snykSecurity snykInstallation: snyk, snykTokenId: 'snyktoken'
+      }
+  }
+}
+
+}
+
+
+
+Demo 3: write a pipeline to perform Dynamic Security testing using tool OWSAP ZAP
+
+DAST -> ZAP tool
+===========================================
+ZAP is an open source security testing tools which is sued to find issues on the web application after it has been deployed
+
+Using ZAP we will perform passive or baseline scan in which we will observe the communication between the web browser and the application without actively iterating with the application
+
+
+Using ZAP we will perform active scans  which are more aggressive to the target application
+In this scan the ZAP tool will send different types of requests to different endpoints of the web application
+
+
+Docker tools and its integration with jenkins
+===================================
+Docker is a deployment tool, that will help you to deploy your build or application on a container
+
+What is a container:
+===============================
+
+A container is process which holds you application and its required s.w or frameworks needed for the app to run
+
+App.war + tomcat+java+os lib
+
+It is an isolated process where your application is running, a container has an IP address, has volume, has network, has file storage
+
+A container is running → application is running
+
+A container stop→ application stops
+
+
+How to create a container
+==================================
+A container is always launched from an Image
+Image is just a binary file or an executable
+When we run an Image a container is launched and container will be running with the application 
+
+Image is a file which has a list of libraries that are needed for our application to run on a container.
+
+Docker → IMAGE → Container [App is running]
+
+Types of images:
+===================
+
+Custom Image : Images created by users for their application code
+
+
+Base Image
+===================
+
+Docker as tool comes with list of ready made Images for open source:
+Databases
+OS
+Tools
+Programming language
+
+SO today we will use that base image of docker to install zap tool
+
+In today’s class we will use docker base image for ZAP
+
+We will run the image → we will get a container in which ZAP tool is running
+
+We will then provide a webpage URL as input to the ZAP container so that zap tool can scan the webpages of the application and generate DAST report.
+
+
+===========================================
+
+Create a pipeline job and add below code:
+=============================================
+
+Provide permission to jenkins user to run docker commands:
+
+# chmod 777 /var/run/docker.sock
+
+============================================
+def scan_type
+def target 
+pipeline{
+
+agent any 
+
+parameters {
+        choice  choices: ['Baseline', 'APIS', 'Full'],
+                 description: 'Type of scan that is going to perform inside the container',
+                 name: 'SCAN_TYPE'
+
+        string defaultValue: 'https://medium.com/',  // URL to scan
+                 description: 'Target URL to scan',
+                 name: 'TARGET'
+
+}
+
+
+stages{
+      stage('Setting up of the OWASP ZAP container'){
+
+      steps{
+          echo "pulling Image of ZAP ---> Start"
+          sh 'docker pull ghcr.io/zaproxy/zaproxy:stable'
+          echo "pulling of Image completed ---> End"
+          echo "Running Image ---> Starting Container"
+          sh 'docker run -dt --name owasp-$BUILD_NUMBER ghcr.io/zaproxy/zaproxy:stable'
+             
+      }
+      }
+
+     stage('Creating a working Directory in the container'){
+
+        steps{
+                 echo "Connect to container and execute command to create a directory"
+                 sh 'docker exec owasp-$BUILD_NUMBER mkdir /zap/wrk'
+        }
+     }
+
+     stage('Scan target on owasp container') {
+
+steps {
+                script {
+				            scan_type = "${params.SCAN_TYPE}"
+                    echo "----> scan_type: $scan_type"
+                    target = "${params.TARGET}"
+
+
+if (scan_type == 'Baseline') {
+                        sh """
+                             docker exec owasp-$BUILD_NUMBER \
+                             zap-baseline.py \
+                             -t $target \
+                             -r report.html \
+                             -I
+                         """
+                    }
+else if (scan_type == 'APIS') {
+                        sh """
+                             docker exec owasp-$BUILD_NUMBER \
+                             zap-api-scan.py \
+                             -t $target \
+                             -r report.html \
+                             -I
+                         """
+                     }
+                     else if (scan_type == 'Full') {
+                        sh """
+                             docker exec owasp-$BUILD_NUMBER \
+                             zap-full-scan.py \
+                             -t $target \
+                             -r report.html \
+                             -I
+                         """
+                     }
+                     else {
+                        echo 'Something went wrong...'
+                     }
+      }
+            }
+        }
+
+        stage('Copy Report to Workspace') {
+            steps {
+                script {
+                    sh '''
+                         docker cp owasp-$BUILD_NUMBER:/zap/wrk/report.html ${WORKSPACE}/report.html
+                     '''
+                }
+            }
+        }
+    }
+
+
+post {
+        always {
+            echo 'Removing container'
+            sh '''
+                     docker stop owasp-$BUILD_NUMBER
+                     docker rm owasp-$BUILD_NUMBER
+                 '''
+
+ }
+
+
+}
+
+
+}
+
+
+Save the job and run
+
+
+
+========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+These are complete steps for Project 1 using githubActions and tomcat
+
+https://github.com/demo1orgtoday/MavenBuild-SL.git
+ 1. Create a code repository on GitHub
+ 2. Create a GitHub Actions pipeline to perform continuous integration
+
+name: CICD using Maven and tomcat
+on:
+ push:  # run when there is commit to repo
+ workflow_dispatch:  # run manually
+jobs:
+ CICDjob:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Clone the repo on ubuntu server
+      uses: actions/checkout@v4
+    - name: Install Java and maven on ubuntu server
+      uses: actions/setup-java@v4
+      with:
+       distribution: 'temurin'
+       java-version: '11'
+       cache: 'maven'
+    - name: Build the code 
+      run: mvn package
+
+
+
+ 3. Configure Tomcat Apache for automated code deployment
+
+ 4. Integrate the GitHub Actions pipeline to invoke the Jenkins pipeline
+
+go to lab install tomcat9 and tomcat9-admin
+setup user.xml and server.xml, restart tomcat
+
+ - name: connect to LAb and deploy code on tomcat9
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      with:
+       host: '13.233.135.136'
+       user: 'labuser'
+       pass: 'Nuvelabs123$'
+       port: 22
+       connect_timeout: 10s
+       first_ssh: |
+          sudo chmod 777 /var/lib/tomcat9/webapps
+       scp: |
+          './target/*war' => /var/lib/tomcat9/webapps
+       last_ssh: |
+          sudo systemctl restart tomcat9
+
+
+ 5. Invoke pipeline to validate automated deployment
+
+
+Steps to run a pipeline job form GitHub actions:
+
+
+Go to jenkisn JOB--> go to triggers --> Trigger builds remotely (e.g., from scripts) --> give any token name (token1)
+
+Construct the remote URL using this syntax:  JENKINS_URL/job/JOB-NAME/build?token=TOKEN_NAME
+
+ http://localhost:8080/job/Githubaction_trigger/build?token=token1
+
+Github actions will go to terminal and run the job --construct the url
+
+curl -l -u admin:Root123$ http://localhost:8080/job/Githubaction_trigger/build?token=token1
+
+Now go to GitHub action main.yml file add the following code 
+
+
+- name: Connect to Lab machine and trigger a Jenkins job 
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      with:
+        host: '43.205.118.149'
+        user: 'labuser'
+        pass: 'Nuvelabs123$'
+        port: 22
+        connect_timeout: 10s
+        first_ssh: |
+          curl -l -u admin:Root123$ http://localhost:8080/job/Githubaction_trigger/build?token=token1
+
+
+The complete workflow
+======================================
+
+name: CICD using Maven and tomcat
+on:
+ push:  # run when there is commit to repo
+ workflow_dispatch:  # run manually
+jobs:
+ CICDjob:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Clone the repo on ubuntu server
+      uses: actions/checkout@v4
+    - name: Install Java and maven on ubuntu server
+      uses: actions/setup-java@v4
+      with:
+       distribution: 'temurin'
+       java-version: '11'
+       cache: 'maven'
+    - name: Build the code 
+      run: mvn package
+    - name: connect to LAb and deploy code on tomcat9
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      with:
+       host: '13.233.135.136'
+       user: 'labuser'
+       pass: 'Nuvelabs123$'
+       port: 22
+       connect_timeout: 10s
+       first_ssh: |
+          sudo chmod 777 /var/lib/tomcat9/webapps
+       scp: |
+          './target/*war' => /var/lib/tomcat9/webapps
+       last_ssh: |
+          sudo systemctl restart tomcat9
+    - name: Connect to Lab machine and trigger a Jenkins job 
+      uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+      with:
+        host: '43.205.118.149'
+        user: 'labuser'
+        pass: 'Nuvelabs123$'
+        port: 22
+        connect_timeout: 10s
+        first_ssh: |
+          curl -l -u admin:Root123$ http://localhost:8080/job/Githubaction_trigger/build?token=token1  
+
+
+
+
+
+
