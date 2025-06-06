@@ -1,0 +1,53 @@
+Hosting a static website on Amazon
+
+Create a bucket for your website
+
+1-Log in to AWS
+2-In the AWS Management Console, search S3
+3-at the top right conner of the console select the AWS Region closest to you.
+4-Choose Create bucket
+5- Use a unique name to name the bucket
+6-In the Object Ownership enable Access Control Lists or ACLs (choose ACLs enabled)
+7-Choose Bucket owner preferred.
+8-In the Block Public Access settings for this bucket: clear the check box for block all public access.
+-a yellow banner pops up : check the box that says " I acknowledge that the current settings might result in this bucket and the objects within becoming public.
+9-In the bucket versioning : choose enable
+10- click on create bucket
+
+########################################################################################################################################
+
+Upload website content / objects to your bucket
+
+1-From your bucket page 
+ -Select Object tap -Upload -Add files or Add folder - then click on upload.
+ -Close when upload succeeds
+
+Make Objects/content in your bucket public(accessible)
+1-From your bucket select objects
+ -check the boxes next to the objexts/ content you need to make public
+2-In the Actions tab, dropdown and select make public using ACL
+
+
+
+########################################################################################################################################
+
+Configure a static website on Amazon S3 bucket
+
+1-Select buckets on the top left side
+2-Select properties tab
+3-Scroll down to the static website hosting panel
+ -select Edit
+ -in the static web hosting : choose enable
+ -in the hosting type : choose host a static website
+ -in the Index Document : enter the exact name of your index document uploaded.( an html file)
+4-Save changes
+5-in the same panel copy or open the URL under Bucket website endpoint.
+
+
+
+
+ 
+
+
+
+
